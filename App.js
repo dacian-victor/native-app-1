@@ -13,7 +13,7 @@ const App = () => {
       <Stack.Navigator screenOptions={{title: null}}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
           headerLeft: () => <Icon name="sort" size={25} style={{marginLeft: 20}} />,
-          headerRight: () => <Image style={{height:40, width: 40, marginRight: 20}} source={require("./app/src/assets/person.jpg")}/>,
+          headerRight: () => <Image style={{height:40, width: 40, marginRight: 20}} source={require("./app/src/assets/person.png")}/>,
         }}></Stack.Screen>
         <Stack.Screen name='CourseScreen' component={CourseScreen} 
           options={({navigation}) => ({

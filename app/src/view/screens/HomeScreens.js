@@ -34,7 +34,7 @@ const HomeScreen = ({navigation}) => {
                     <Text style={{fontSize:20, fontWeight:'bold'}}>Categories</Text>
                     <Text style={{fontSize:18, fontWeight:'bold',color:'#6E8AFA'}}>See All</Text>
                 </View>
-                <View style={{flex: 1}}>
+                <View>
                     <FlatList
                     showsVerticalScrollIndicator={false}
                     numColumns={2}
