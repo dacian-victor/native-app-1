@@ -1,33 +1,41 @@
-import React, { TouchableOpacity, Text, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './app/src/view/screens/HomeScreens';
-import CourseScreen from './app/src/view/screens/CourseScreen';
+import 'react-native-gesture-handler';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack'; 
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import colors from "./app/config/colors";
+import HomeScreen from "./app/screens/HomeScreen";
+import CoffeeDetailsScreen from "./app/screens/CoffeeDetailsScreen";
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: colors.dark
+  },
+};
+
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{title: null}}>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
-          headerLeft: () => <Icon name="sort" size={25} style={{marginLeft: 20}} />,
-          headerRight: () => <Image style={{height:40, width: 40, marginRight: 20}} source={require("./app/src/assets/person.png")}/>,
-        }}></Stack.Screen>
-        <Stack.Screen name='CourseScreen' component={CourseScreen} 
-          options={({navigation}) => ({
-            headerLeft: () => (
-              <TouchableOpacity  activeOpacity={0.8} onPress={() => navigation.goBack()}>
-                <Icon name="arrow-back-ios" size={25} style={{marginLeft: 20}} />
-              </TouchableOpacity>
-            ),            
-            headerRight: () => <Icon name="more-vert" size={25} style={{marginRight: 20}} />
-          })}></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer theme={MyTheme}>
+        {/* <StatusBar barStyle="light-content"></StatusBar> */}
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+          initialRouteName="Start"
+        >
+          <Stack.Screen name="Start" component={WelcomeScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Details" component={CoffeeDetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
-  
-}
+};
 
 export default App;
+
+const styles = StyleSheet.create({});
