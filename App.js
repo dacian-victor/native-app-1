@@ -4,9 +4,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import colors from "./app/config/colors";
-import HomeScreen from "./app/screens/HomeScreen";
-import CoffeeDetailsScreen from "./app/screens/CoffeeDetailsScreen";
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import HomeScreen from "./app/src/screens/HomeScreen";
+import CoffeeDetailsScreen from "./app/src/screens/CoffeeDetailsScreen";
+import WelcomeScreen from './app/src/screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 
