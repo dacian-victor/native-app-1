@@ -3,7 +3,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'; 
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import colors from "./app/config/colors";
+import colors from "./app/src/config/colors";
 import HomeScreen from "./app/src/screens/HomeScreen";
 import CoffeeDetailsScreen from "./app/src/screens/CoffeeDetailsScreen";
 import WelcomeScreen from './app/src/screens/WelcomeScreen';
@@ -26,7 +26,7 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName="Start"
+          initialRouteName="Home"
         >
           <Stack.Screen name="Start" component={WelcomeScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
